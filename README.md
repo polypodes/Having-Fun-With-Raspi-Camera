@@ -7,6 +7,7 @@ Having fun with a Raspberry-Pi &amp; its camera
 
 - Buy a [Raspberry Pi at Adafruit.com](http://www.adafruit.com/products/1914)
 - Buy a [camera board at Adafruit.com](http://www.adafruit.com/products/1367)
+- Install `raspistill` ([documentation here](http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md), this is simple)
 
 
 Assemble it:
