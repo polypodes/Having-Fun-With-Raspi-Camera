@@ -9,5 +9,5 @@
 # @source: http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md
 
 DATE=$(date +"%Y-%m-%d_%H%M")
-
-raspistill -vf -hf -o images/$DATE.jpg
+DIR=`dirname "$BASH_SOURCE"`
+raspistill -vf -hf -o $DIR/images/$DATE.jpg
