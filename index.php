@@ -9,8 +9,9 @@
  * @license MIT
  */
 
+// Router:
 if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
-    return false;    // retourne la requête telle quelle.
+    return false;    // image file is returned.
 } else {
     $images = getImages("images");
 
@@ -20,6 +21,7 @@ if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
        }
 }
 
+// Media provider
 function getImages($dir)
 {
     $imagetypes = array("image/jpeg", "image/gif");
