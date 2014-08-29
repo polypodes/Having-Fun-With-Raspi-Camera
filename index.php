@@ -58,4 +58,28 @@ function getImages($dir)
     return $retval;
 }
 
+function getSunTimes()
+{
+
+    // See http://php.net/manual/fr/function.date-sunrise.php
+    // See http://php.net/manual/fr/function.date-sunset.php
+    // See http://php.net/manual/fr/function.date-sun-info.php
+    
+    $lat = 47.2168424;  // Nantes, France
+    $long = -1.5567445; // Nantes, France
+    $today = date("D M d Y");
+    $zenith = 90+(50/60); // Hypothetical
+    $gmtOffset = 2;     // Central European Summer Timezone
+    
+    $sunrise = date_sunrise(time(), SUNFUNCS_RET_STRING, $lat, $long, $zenith, $gmtOffset);
+    $sunset = date_sunset(time(), SUNFUNCS_RET_STRING, $lat, $long, $zenith, $gmtOffset);
+    echo sprintf("Today %s, sunrise at %s and sunset at %s", $today, $sunrise, $sunset);
+    
+    $sun_info = date_sun_info(time(), $lat, $long);
+    foreach ($sun_info as $key => $val) {
+          echo "\n$key: " . date("H:i:s", $val) . "\n";
+    }
+}
+}
+
 ?>
